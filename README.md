@@ -38,4 +38,5 @@ File Convert Tool using CloudConvert API V2
 ### option 
 * -i : input filepath like ./sample.jpg
 * -f : output format like pdf
+* -l : print convertible formats corresponding to input
 * -h : print all supported formats
