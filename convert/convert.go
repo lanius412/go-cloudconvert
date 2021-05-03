@@ -50,8 +50,8 @@ func Do(filePath, outputFormat string) (string, error) {
 		log.Fatalln("export task error: ", err)
 	}
 
-	downloadUrl, pdfFileName := tasks.doneTask()
-	if downloadUrl == "" || pdfFileName == "" {
+	downloadUrl, outputFileName := tasks.doneTask()
+	if downloadUrl == "" || outputFileName == "" {
 		return "", errors.New("download url can't find")
 	}
 
@@ -60,12 +60,12 @@ func Do(filePath, outputFormat string) (string, error) {
 		log.Fatalln("delete tasks error: ", err)
 	}
 
-	err = downlaodFile(downloadUrl, pdfFileName)
+	err = downlaodFile(downloadUrl, outputFileName)
 	if err != nil {
 		log.Fatalln("download file error: ", err)
 	}
 
-	return pdfFileName, err
+	return outputFileName, err
 }
 
 //downloadFile download a pdf file from cloudconvert storage url
